@@ -1,0 +1,18 @@
+fragment viewerFragment on User{
+  MyName: name
+  createdAt
+}
+
+query getViewer {
+  viewer {
+    ...viewerFragment
+  }
+}
+
+# getUser gets the given user's name from their username.
+query getUser($Login: String!) {
+  user(login: $Login) {
+    theirName: name
+    createdAt
+  }
+}
